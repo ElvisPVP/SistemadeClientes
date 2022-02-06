@@ -4,6 +4,7 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,15 +54,23 @@ public class ClienteServicioTest {
 	}
 	
 	@Test
-	public agregarClienteNull() {
-		List<Cliente> listaClientes = new ArrayList<>();
-		listaClientes.add(cl.getNombreCliente());
-		for (Cliente cliente : listaClientes) {
-			System.out.println(cl.getRun());
+	public void agregarClienteNull() {
+		try {
+			List<Cliente> listaClientes = new ArrayList<>();
+		
+			listaClientes.add(null);
+			for (Cliente cliente : listaClientes) {
+			System.out.println(cl.getRun());	
+			}
+			
+			String Obtenido = cl.getNombreCliente();
+			String Esperado = null;
+			assertEquals(Obtenido, Esperado, 0);
+			fail("Se esperaba Null Exception");
+		} catch (NullPointerException e) {
+			
 		}
-		String Obtenido = cl.getNombreCliente();
-		String Esperado = null;
-		assertEquals(Obtenido, Esperado, 0);
+		
 	}
 	
 	
