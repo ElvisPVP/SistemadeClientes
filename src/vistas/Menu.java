@@ -12,7 +12,7 @@ import servicio.ExportadorCsv;
 import servicio.ExportadorTxt;
 import utilidad.Util;
 
-public class Menu {
+public class Menu implements MenuTemplate{
 
 	private Scanner sc;
 	private ClienteServicio cs;

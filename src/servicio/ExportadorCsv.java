@@ -7,8 +7,11 @@ import java.io.IOException;
 import java.util.List;
 
 import modelo.Cliente;
+import utilidad.Util;
 
 public class ExportadorCsv extends Exportador{
+	
+	Util ut = new Util();
 	
 	@Override
 	public void exportar(List<Cliente> listaClientes, String ruta) {
@@ -27,6 +30,7 @@ public class ExportadorCsv extends Exportador{
 				}
 				escritor.close();
 				System.out.println("Datos de clientes exportados correctamente en formato csv.");
+				ut.limpiarPantallaNormal();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -44,6 +48,7 @@ public class ExportadorCsv extends Exportador{
 				}
 				escritor.close();
 				System.out.println("Datos de clientes exportados correctamente en formato csv.");
+				ut.limpiarPantallaNormal();
 			} catch (IOException ex) {
 				System.out.println(ex.getMessage());
 			}
