@@ -1,5 +1,10 @@
 package vistas;
 
+/**
+ * Clase para otorgar los métodos de uso obligatorio hacia la clase Menú
+ * @author Elvis
+ *
+ */
 public interface MenuTemplate {
 	
 	public static void listarCliente() {

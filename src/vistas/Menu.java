@@ -12,6 +12,11 @@ import servicio.ExportadorCsv;
 import servicio.ExportadorTxt;
 import utilidad.Util;
 
+/**
+ * Es el menu que implementa de menuTemplate, tambien contiene clases que solo se han declarado
+ * @author Elvis
+ *
+ */
 public class Menu implements MenuTemplate{
 
 	private Scanner sc;
@@ -24,6 +29,9 @@ public class Menu implements MenuTemplate{
 	private String filename;
 	private String fileName1;
 
+	/**
+	 * Se inicializan las clases antes declaradas en clase Menu
+	 */
 	public Menu() {
 		sc = new Scanner(System.in);
 		cs = new ClienteServicio();
@@ -34,6 +42,9 @@ public class Menu implements MenuTemplate{
 
 	}
 
+	/**
+	 * Se genera metodo para iniciar el menu
+	 */
 	public void iniciarMenu() {
 		int op = 0;
 		System.out.println("Favor presione cualquier tecla alfanumerica");
@@ -75,11 +86,17 @@ public class Menu implements MenuTemplate{
 
 	}
 
+	/**
+	 * Se genera metodo que llama a listarCliente
+	 */
 	public void listarCliente() {
 		ut.limpiarPantallaNormal();
 		cs.listarClientes();
 	}
 
+	/**
+	 * Metodo para agregarCliente
+	 */
 	public void agregarCliente() {
 		System.out.println("Crear cliente");
 		System.out.println("Ingresa RUN del cliente");
@@ -98,7 +115,9 @@ public class Menu implements MenuTemplate{
 
 	}
 
-	
+	/**
+	 * Se genera metodo para editar clientes como cambiar el estado de estos
+	 */
 	public void editarCliente() throws InputMismatchException {
 
 		System.out.println("Editar cliente");
@@ -131,7 +150,7 @@ public class Menu implements MenuTemplate{
 				e.getMessage();
 				System.out.println("Debe ingresar la opción 1 ó 2");
 			} 
-			
+			ut.limpiarPantallaNormal();
 			
 			break;
 		case 2:
@@ -188,10 +207,13 @@ public class Menu implements MenuTemplate{
 			System.out.println("Alternativa no válida");
 			break;
 
-		}
+		}	ut.limpiarPantallaNormal();
 
 	}
 
+	/**
+	 * Se genera metodo para importar la información por un formato .csv
+	 */
 	public void importarDatos() {
 		String filename1 = ("src/DBClientes.csv");
 		System.out.println("Cargar Datos");
@@ -205,9 +227,12 @@ public class Menu implements MenuTemplate{
 			System.out.println("Datos cargados correctamente en la lista");
 		} else {
 			System.out.println("No hay elementos para importar");
-		}
+		} 
 	}
 
+	/**
+	 * Se genera metodo para llamar a los otros metodos que traen valores de archivos con formato .csv y .txt
+	 */
 	public void exportarDatos() {
 		System.out.println("Exportar Datos");
 		System.out.println("Seleccione el formato a exportar");
@@ -233,6 +258,9 @@ public class Menu implements MenuTemplate{
 		
 	}
 
+	/*
+	 * Metodo para finalizar el uso de programa
+	 */
 	public void terminarPrograma() {
 		ut.printLine("Muchas gracias por utilizar nuestro programa");
 		ut.esperar();

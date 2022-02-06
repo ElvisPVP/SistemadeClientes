@@ -9,10 +9,18 @@ import java.util.List;
 import modelo.Cliente;
 import utilidad.Util;
 
+/**
+ * Creación de clase ExportadorCsv que toma los metodos de la clase Exportador
+ * @author Elvis
+ *
+ */
 public class ExportadorCsv extends Exportador{
 	
 	Util ut = new Util();
 	
+	/**
+	 * Metodo exportar para los archivos con formato .csv
+	 */
 	@Override
 	public void exportar(List<Cliente> listaClientes, String ruta) {
 		String path = String.format("%s\\clientes.csv", ruta);

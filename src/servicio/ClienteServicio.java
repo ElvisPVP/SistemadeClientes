@@ -5,17 +5,31 @@ import java.util.List;
 
 import modelo.Cliente;
 
+/**
+ * Creación de la clase "ClienteServicio"
+ * @author Elvis
+ *
+ */
 public class ClienteServicio {
 
+	/**
+	 * Creación de arreglo List para Cliente
+	 */
 	private List<Cliente> listaClientes;
 	
+	/**
+	 * Creación de Constructor
+	 */
 	public ClienteServicio()
 	{
 		listaClientes = new ArrayList<>();
 	}
 	
 	
-
+	/**
+	 * Creación de Getters y Setters
+	 * @return
+	 */
 	public List<Cliente> getListaClientes() {
 		return listaClientes;
 	}
@@ -27,12 +41,17 @@ public class ClienteServicio {
 	}
 
 
-
+	/**
+	 * Creación del To String
+	 */
 	@Override
 	public String toString() {
 		return "ClienteServicio [listaClientes=" + listaClientes + "]";
 	}
-
+	/**
+	 * Creación del metodo agregar para ingresar la información al arreglo listaClientes
+	 * @param cl
+	 */
 	public void agregar(Cliente cl)
 	{
 		if (buscar(cl.getRun()) == null) {
@@ -42,7 +61,11 @@ public class ClienteServicio {
 			System.out.println("El run ya está registrado");
 		}
 	}
-	
+	/**
+	 * Creación del metodo buscar para identificar si el dato para ingresar esta incluido o no
+	 * @param run
+	 * @return
+	 */
 	public Cliente buscar(String run)
 	{
 		for (Cliente cliente : listaClientes) {
@@ -50,43 +73,17 @@ public class ClienteServicio {
 				return cliente;
 			}
 		} return null;
+		
 	}
 	
-	
+	/**
+	 * Metodo para mostrar los elementos del arreglo listaClientes
+	 */
 	public void listarClientes()
 	{
-		//foreach
-		for (Cliente cliente : listaClientes) {
-			System.out.println(cliente.toString());
-		}
 		
-//		//for
-//		for (int i = 0; i < listaProducto.size(); i++) {
-//			System.out.println(listaProducto.get(i));			
-//		}
-//		
-//		//for con iterator
-//		for (Iterator iterator = listaProducto.iterator(); iterator.hasNext();) {
-//			System.out.println(iterator.next().toString());			
-//		}
-//		
-//		//while
-//		int i = 0;
-//		while (i < listaProducto.size()) {
-//			System.out.println(listaProducto.get(i));
-//			i++;
-//		}
-//		
-//		//while con iterator
-//		Iterator<Producto> iter = listaProducto.iterator();
-//		while (iter.hasNext()) {
-//			System.out.println(iter.next().toString());			
-//		}
-//		
-//		//clase Stream con Lambda
-//		listaProducto.stream().forEach(pro -> System.out.println(pro.toString()));
-//		//clase Stream con Lambda y métodos de java 8
-//		listaProducto.stream().forEach(System.out::print);
+		listaClientes.stream().forEach(cl -> System.out.println(cl.toString()));
+		
 	}
 	
 }

@@ -18,28 +18,51 @@ import org.junit.Test;
 import modelo.Cliente;
 
 
-
+/**
+ * Generar clase para ejecutar tests
+ * @author Elvis
+ *
+ */
 public class ClienteServicioTest {
 	
 	Cliente cl;
 
+	/**
+	 * Se utiliza antes de cada clase
+	 * @throws Exception
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		
 	}
 
+	/**
+	 * Se utiliza desde de cada clase
+	 * @throws Exception
+	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Se utiliza antes de todas las clases por 1 vez
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 	}
 
+	/**
+	 * Se utiliza despues de todas las clases por 1 vez
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Se hace prueba con el metodo agregarCliente
+	 */
 	@Test
 	public void agregarCliente() {
 		List<Cliente> listaClientes = new ArrayList<>();
@@ -53,6 +76,9 @@ public class ClienteServicioTest {
 		
 	}
 	
+	/**
+	 * Se hace prueba con el metodo agregarClienteNull
+	 */
 	@Test
 	public void agregarClienteNull() {
 		try {

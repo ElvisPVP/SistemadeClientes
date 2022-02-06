@@ -10,19 +10,24 @@ import java.util.List;
 
 import modelo.Categoria;
 import modelo.Cliente;
+import utilidad.Util;
 
 
-
-public class ArchivoServicio extends Exportador{
+/**
+ * Se crea la clase ArchivoServicio para el desarrollo del metodo "importar"
+ * @author Elvis
+ *
+ */
+public class ArchivoServicio{
 	
 	private Categoria en;
+	Util ut = new Util();
 
-	@Override
-	public void exportar(List<Cliente> listaClientes, String ruta) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+	/**
+	 * Desarrollo del método importar
+	 * @param ruta
+	 * @return
+	 */
 	public List<Cliente> importar(String ruta) {
 		List<Cliente> lista = new ArrayList<>();
 		String path = String.format("%s\\DBClientes.csv", ruta);
@@ -51,7 +56,7 @@ public class ArchivoServicio extends Exportador{
 			System.out.println("Archivo no existe en esa ruta");
 			return null;
 		}
-
+		ut.limpiarPantallaNormal();
 		return lista;
 	}
 

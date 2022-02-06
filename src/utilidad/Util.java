@@ -1,7 +1,15 @@
 package utilidad;
 
+/**
+ * Creación de clase Util
+ * @author Elvis
+ *
+ */
 public class Util {
 	
+	/**
+	 * Metodo para limpiar 20 líneas de código
+	 */
 	public void limpiarPantallaNormal()
 	{
 		for (int i = 0; i < 20; i++) {
@@ -9,6 +17,9 @@ public class Util {
 		}
 	}
 	
+	/**
+	 * Metodo para limpiar 100 lineas de código
+	 */
 	public void limpiarPantallaTerminar()
 	{
 		for (int i = 0; i < 100; i++) {
@@ -16,11 +27,19 @@ public class Util {
 		}
 	}
 	
+	/**
+	 * Se utiliza para escribir algun mensaje 
+	 * @param mensaje
+	 */
 	public void printLine(String mensaje) 
 	{
 		System.out.println(mensaje);
 	}
 	
+	
+	/**
+	 * Se utiliza para dar un tiempo de espera al ejecutarse
+	 */
 	public void esperar()
 	{
 		try {

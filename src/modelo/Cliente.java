@@ -1,12 +1,29 @@
 package modelo;
 
+/**
+ * 
+ * @author Elvis
+ *
+ */
 public class Cliente{
 	
+	/**
+	 * Se crean las variables
+	 */
 	private String run;
 	private String nombreCliente;
 	private String apellidoCliente;
 	private String aniosCliente;
 	Categoria nombreCategoria;
+	
+	/**
+	 * Se crean los constructores
+	 * @param run
+	 * @param nombreCliente
+	 * @param apellidoCliente
+	 * @param aniosCliente
+	 * @param nombreCategoria
+	 */
 	public Cliente(String run, String nombreCliente, String apellidoCliente, String aniosCliente,
 			Categoria nombreCategoria) {
 		super();
@@ -16,6 +33,10 @@ public class Cliente{
 		this.aniosCliente = aniosCliente;
 		this.nombreCategoria = nombreCategoria;
 	}
+	/**
+	 * Se generan getters y setters
+	 * @return
+	 */
 	public String getRun() {
 		return run;
 	}
@@ -47,6 +68,9 @@ public class Cliente{
 		this.nombreCategoria = nombreCategoria;
 		return nombreCategoria;
 	}
+	/**
+	 * Se genera el toString y se utiliza el StringBuilder para mayor orden
+	 */
 	@Override
 	public String toString() {
 		

@@ -9,10 +9,16 @@ import java.util.List;
 import modelo.Cliente;
 import utilidad.Util;
 
+/**
+ * Se crea clase ExportadorTxt que toma los metodos de Exportador
+ */
 public class ExportadorTxt extends Exportador {
 	
 	Util ut = new Util();
 
+	/**
+	 * Se crea metodo exportar para traer los valores de archivos con extensión .txt
+	 */
 	@Override
 	public void exportar(List<Cliente> listaClientes, String ruta) {
 		String path = String.format("%s\\clientes.txt", ruta);
