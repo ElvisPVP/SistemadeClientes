@@ -221,10 +221,8 @@ public class Menu implements MenuTemplate{
 		String ruta = sc.next();
 		List<Cliente> nueva = as.importar(ruta);
 		if (nueva != null) {
-			for (Cliente cliente : nueva) {
-				cs.agregar(cliente);
-			}
-			System.out.println("Datos cargados correctamente en la lista");
+			nueva.stream().forEach(cliente -> {cs.agregar(cliente);});
+		System.out.println("Datos cargados correctamente en la lista");
 		} else {
 			System.out.println("No hay elementos para importar");
 		} 

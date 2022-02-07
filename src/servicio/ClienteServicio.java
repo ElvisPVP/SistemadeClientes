@@ -68,6 +68,7 @@ public class ClienteServicio {
 	 */
 	public Cliente buscar(String run)
 	{
+//		listaClientes.stream().forEach(cliente -> {if(cliente.getRun().equals(run));});
 		for (Cliente cliente : listaClientes) {
 			if (cliente.getRun().equals(run)) {
 				return cliente;
